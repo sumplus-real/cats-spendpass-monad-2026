@@ -1,0 +1,15 @@
+No files changed, compilation skipped
+
+Ran 1 test for contracts/test/SpendPass.t.sol:SpendPassTest
+[FAIL: root ledger] testMachineGuardActualStorageDoubleCredit() (gas: 507451)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 5.98ms (3.35ms CPU time)
+
+Ran 1 test suite in 20.98ms (5.98ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in contracts/test/SpendPass.t.sol:SpendPassTest
+[FAIL: root ledger] testMachineGuardActualStorageDoubleCredit() (gas: 507451)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 1 failed test

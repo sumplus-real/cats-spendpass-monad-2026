@@ -1,0 +1,44 @@
+{
+  "status": "PASS_REPAIRED_DEPENDENCY_READ_ONLY_WS_AND_CONTRACT",
+  "checkedAt": "2026-10-12T19:34:17.984Z",
+  "durationMs": 3478,
+  "wsVersion": "8.21.0",
+  "packageLockSha256": "592d9c05bef5825a8ade8359e12e278e8349923bfaa5ec1405f4c3c7a98f9b82",
+  "rpc": "https://testnet-rpc.monad.xyz",
+  "ws": "wss://testnet-rpc.monad.xyz",
+  "chainId": 10143,
+  "verifiedHeaders": 7,
+  "actualVerifiedSamples": [
+    {
+      "blockId": "0xfb9d159ecdea029b4c637008367fe138f508d7431481c82a39a62e9329a4d991",
+      "hash": "0x72d0eda5102fa07c99b4a58f9b49b90cd83b07f33459299803780501aade8738",
+      "number": "0x43378e0",
+      "receivedAt": 1791833656009
+    },
+    {
+      "blockId": "0x978b4bedcf74d3a2d5ae8bfcb43910e19b9d37fa064db6ee73f38828f86e4f67",
+      "hash": "0xefd7baa63cfd537c87fc3494662ba6abdd42a65cada7cb6e0eabe7257d7e4e3d",
+      "number": "0x43378e1",
+      "receivedAt": 1791833656357
+    },
+    {
+      "blockId": "0x8f98b193fc0b568aef9aebc04ce28b5bfb736429fe3cd381e446233b5ac9048d",
+      "hash": "0xa2500326b16fa624e3ef3b4938e0e2eeb0fd87990ec99689a55528ba785dee7e",
+      "number": "0x43378e2",
+      "receivedAt": 1791833656992
+    }
+  ],
+  "rawHeaderCount": 28,
+  "errors": [],
+  "contract": "0xa6995fad6255accf1bf0c570ac9c48c95fb2a3a7",
+  "rootId": "0x1a00d2fd81f30be4bbc999fea148724a9f9d8902d2afd4cb8cf6c9e1364b6e27",
+  "actualCodeHash": "0x9691bbb26f8e1bd0b1389644b0d30899e86955e84e2f34344b9b8cb6f8953a22",
+  "expectedCodeHash": "0x9691bbb26f8e1bd0b1389644b0d30899e86955e84e2f34344b9b8cb6f8953a22",
+  "compiledArtifactMatched": true,
+  "offerAccepted": true,
+  "providerClaimedWei": "2000000000000000",
+  "ledgerValid": true,
+  "transactionsSent": 0,
+  "modelHTTPAttempts": 0,
+  "scope": "Current repaired ws8.21.0 supports actual WS Verified and reads existing accepted/claimed ledger; historical real model/transactions ran old ws8.18.3. No replay or new paid/model/chain write."
+}

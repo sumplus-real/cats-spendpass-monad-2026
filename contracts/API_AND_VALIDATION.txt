@@ -1,0 +1,58 @@
+CATS SpendPass local contract v1.1
+
+Only task acceptance fees: Accepted proves entitlement to the fixed payee, not AI execution, capacity, quality, or fulfillment. Closing and cancellation cannot refund Accepted fees. Native MON gas is separate from workflow budget.
+
+ABI: contracts/SpendPass.abi.json
+Full compiler artifact including deployable bytecode: contracts/out/SpendPass.sol/SpendPass.json
+Solidity 0.8.28 / optimizer 200 / viaIR / Cancun. No imported libraries; all source MIT.
+
+Policy tuple:
+owner, delegate, rootOperator, rootPayee, childOperator, childPayee,
+totalBudget, rootFeeMax, perChildMax, childrenTotalMax, expiry.
+Caps are hard limited to .010 total / .002 root fee / .004 per child / .008 child total MON.
+Max two leaves, root depth 1, leaves depth 2, one successful root split, one offer lifetime per grant. No policy mutation, admin, arbitrary transfer recipient, merge, or sweep.
+
+Quote tuple:
+grantId, operator, payee, taskInputHash, modelHash, fee, expiry, nonce, policyHash.
+EIP712 domain name CATS SpendPass, version 1, actual chainId, deployed verifyingContract.
+Quote EIP712 type includes the above fields plus address assetNativeMON (must encode address(0), added by quoteDigest).
+Quote(bytes32 grantId,address operator,address payee,bytes32 taskInputHash,bytes32 modelHash,uint256 fee,uint256 expiry,uint256 nonce,bytes32 policyHash,address assetNativeMON)
+All signatures canonical low-S ECDSA, 65 bytes v=27/28. Contract wallet operator signatures are not supported.
+
+Grant getter:
+rootId, originalAllocation, free, held, providerUnclaimed, providerClaimed,
+ownerWithdrawn, delegatedOutstanding, depth.
+Offer getter:
+state, operator, payee, fee, expiry, quoteHash.
+Offer enum None=0 / Offered=1 / Accepted=2 / Cancelled=3 / Expired=4.
+Root status getters closing(rootId), didSplit(rootId), childCount(rootId).
+Root enumeration rootCount(), roots(index). Child ID childId(rootId,index0or1).
+Policy hash is keccak256(abi.encode(Policy)). Root nonce is creationNonce(owner).
+
+Transactions:
+createRoot(Policy) payable exact funding -> rootId event/return.
+reserve(Quote, signature) only immutable delegate, root active and valid signature.
+accept(grantId) only quote operator, root active and quote unexpired.
+cancel(grantId) only owner/delegate, Offered only.
+release(grantId) anyone after closing/root expiry/quote expiry, Offered only.
+split(rootId, allocations[]) only delegate after root Accepted, once.
+close(rootId) owner only, monotonic shared root closing bit.
+withdraw(grantId) owner only after close/root expiry, transfers only free to fixed owner.
+claim(grantId) permissionless relay, Accepted only, transfers only unclaimed to fixed payee.
+
+Ledger checks:
+ledgerValid(grantId) compares originalAllocation against free+held+providerUnclaimed+providerClaimed+ownerWithdrawn+delegatedOutstanding.
+Global accountedBalance()=registeredFunding-paidOut; tree asset sum is free+held+providerUnclaimed across all registered grants, excluding delegatedOutstanding.
+unsolicitedSurplus()=native contract balance-accountedBalance. Forced donations are not user funding; no withdrawal/sweep entitlement is created.
+
+Evidence:
+contracts/evidence/checkpoint.json ties source/config hashes to 31 passing tests and 256 recovery fuzz runs.
+contracts/evidence/foundry-tests.txt is actual full local output.
+contracts/evidence/knownbad-must-fail.txt is deliberate actual parent.free storage corruption: the same conservation guard becomes FAIL root ledger.
+To reproduce normal: forge test -vv.
+To reproduce deliberate red guard: CATS_KNOWN_BAD=true forge test --match-test testMachineGuardActualStorageDoubleCredit -vv.
+
+Local coverage includes both accept/cancel orders; both close/accept orders; accepted cannot cancel/refund; both leaves Accepted means zero owner refund; exact deposit; all policy caps; child count/depth; duplicate split/offer; expiry; wrong delegate/operator/payee/policy; signature/payload/chain/contract domain; reject payee and owner rollback; reentrant claim and withdraw; repeated payments; forced surplus; full cold recovery conservation.
+Local EVM checks alone are not a testnet execution, WSVerified dispatch proof, security audit, wallet UI validation, or independent customer usage.
+
+Revision v1.1: frozen two-operator policy enforced onchain at creation: delegate equals rootOperator A; childOperator B differs from A. This rejects unsupported policy before nonce/funding updates. ABI signatures unchanged; bytecode changed, so deployment/codehash/rehearsal artifacts from v1 need regeneration.

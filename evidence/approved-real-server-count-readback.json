@@ -1,0 +1,30 @@
+{
+  "source": "production activity filtered to dedicated temporary key only",
+  "authenticatedKeyRequestCount": 2,
+  "matchingBillableActivityCount": 1,
+  "revoked": true,
+  "modelEntries": [
+    {
+      "requestedModel": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "status": "ok",
+      "serializedAttemptField": null,
+      "attemptInterpretation": "1; optional persisted attempt omitted for first attempt per src/activity.rs default_attempt/is_first_attempt",
+      "promptTokens": 22,
+      "completionTokens": 15,
+      "actualChargeUSD": 7.38e-06,
+      "latencyMs": 977
+    }
+  ],
+  "keyTotalPromptTokens": 22,
+  "keyTotalCompletionTokens": 15,
+  "keyActualCostUSD": 7.38e-06,
+  "callerGatewayPOSTAttempts": 1,
+  "counterSource": [
+    "src/keys.rs record_use increments on authentication",
+    "src/router.rs is_valid_user_key calls record_use",
+    "src/main.rs /v1/me/key and /v1/chat/completions share require_user_key route layer"
+  ],
+  "productionAccountIdentityOmitted": true,
+  "diagnosticModelPOSTs": 0
+}

@@ -1,0 +1,399 @@
+
+> sumplus-cats-spendpass@0.1.0 test
+> node --test runtime/*.test.mjs runtime/test.mjs scripts/*.test.mjs
+
+TAP version 13
+# Subtest: approved exact bounds yield one fixture call and permanent exact-body guard
+ok 1 - approved exact bounds yield one fixture call and permanent exact-body guard
+  ---
+  duration_ms: 72.23875
+  ...
+# Subtest: zero HTTP for wrong model
+ok 2 - zero HTTP for wrong model
+  ---
+  duration_ms: 3.425125
+  ...
+# Subtest: zero HTTP for oversized output
+ok 3 - zero HTTP for oversized output
+  ---
+  duration_ms: 5.733959
+  ...
+# Subtest: zero HTTP for thinking enabled
+ok 4 - zero HTTP for thinking enabled
+  ---
+  duration_ms: 5.021375
+  ...
+# Subtest: zero HTTP for tools
+ok 5 - zero HTTP for tools
+  ---
+  duration_ms: 2.282875
+  ...
+# Subtest: zero HTTP for unknown extra field
+ok 6 - zero HTTP for unknown extra field
+  ---
+  duration_ms: 1.5365
+  ...
+# Subtest: zero HTTP for provider fallback
+ok 7 - zero HTTP for provider fallback
+  ---
+  duration_ms: 1.470583
+  ...
+# Subtest: zero HTTP for wrong provider
+ok 8 - zero HTTP for wrong provider
+  ---
+  duration_ms: 1.515833
+  ...
+# Subtest: zero HTTP for two messages
+ok 9 - zero HTTP for two messages
+  ---
+  duration_ms: 1.556708
+  ...
+# Subtest: zero HTTP for non-ASCII
+ok 10 - zero HTTP for non-ASCII
+  ---
+  duration_ms: 1.753792
+  ...
+# Subtest: zero HTTP for oversized input
+ok 11 - zero HTTP for oversized input
+  ---
+  duration_ms: 1.626042
+  ...
+# Subtest: zero HTTP for system message
+ok 12 - zero HTTP for system message
+  ---
+  duration_ms: 2.172541
+  ...
+# Subtest: mutated canonical HTTP body rejected before guard/call
+ok 13 - mutated canonical HTTP body rejected before guard/call
+  ---
+  duration_ms: 1.553
+  ...
+# Subtest: mutation after invocation cannot change snapshotted exact HTTP bytes
+ok 14 - mutation after invocation cannot change snapshotted exact HTTP bytes
+  ---
+  duration_ms: 16.243708
+  ...
+# Subtest: duplicate concurrent requests allow one call total
+ok 15 - duplicate concurrent requests allow one call total
+  ---
+  duration_ms: 15.276583
+  ...
+# Subtest: canonical task alias cannot get another bounded provider call through worker
+ok 16 - canonical task alias cannot get another bounded provider call through worker
+  ---
+  duration_ms: 80.647917
+  ...
+# Subtest: wrong chain binding produces zero call
+ok 17 - wrong chain binding produces zero call
+  ---
+  duration_ms: 1.6095
+  ...
+# Subtest: Failed HTTP terminal is notified and permanently guarded without retry
+ok 18 - Failed HTTP terminal is notified and permanently guarded without retry
+  ---
+  duration_ms: 11.7715
+  ...
+# Subtest: slow estimate knownbad clock fails while exact broadcast clock meets same Verified 5s bound
+ok 19 - slow estimate knownbad clock fails while exact broadcast clock meets same Verified 5s bound
+  ---
+  duration_ms: 1.908708
+  ...
+# Subtest: RPC completion timestamp is never substituted for broadcast start
+ok 20 - RPC completion timestamp is never substituted for broadcast start
+  ---
+  duration_ms: 0.361125
+  ...
+# Subtest: duplicate raw broadcast rejected without additional RPC
+ok 21 - duplicate raw broadcast rejected without additional RPC
+  ---
+  duration_ms: 2.391167
+  ...
+# Subtest: ambiguous RPC failure retains original broadcast time/hash and never rebroadcasts
+ok 22 - ambiguous RPC failure retains original broadcast time/hash and never rebroadcasts
+  ---
+  duration_ms: 0.631833
+  ...
+# Subtest: timing lookup rejects absent hashes and dishonest preparation chronology
+ok 23 - timing lookup rejects absent hashes and dishonest preparation chronology
+  ---
+  duration_ms: 0.788417
+  ...
+# Subtest: real viem HTTP transport hook observes sendRaw invocation, after slow preparation RPC
+ok 24 - real viem HTTP transport hook observes sendRaw invocation, after slow preparation RPC
+  ---
+  duration_ms: 92.250958
+  ...
+# Subtest: read adapter verifies fresh tx receipt event and pinned Accepted entitlement
+ok 25 - read adapter verifies fresh tx receipt event and pinned Accepted entitlement
+  ---
+  duration_ms: 3.850542
+  ...
+# Subtest: wrong chain rejected
+ok 26 - wrong chain rejected
+  ---
+  duration_ms: 0.471875
+  ...
+# Subtest: unrelated receipt event cannot authorize dispatch
+ok 27 - unrelated receipt event cannot authorize dispatch
+  ---
+  duration_ms: 0.674708
+  ...
+# Subtest: receipt wrong hash rejected
+ok 28 - receipt wrong hash rejected
+  ---
+  duration_ms: 0.124209
+  ...
+# Subtest: canonical block changes during reads rejected
+ok 29 - canonical block changes during reads rejected
+  ---
+  duration_ms: 1.343417
+  ...
+# Subtest: fresh receipt.to wrong contract rejected
+ok 30 - fresh receipt.to wrong contract rejected
+  ---
+  duration_ms: 0.471209
+  ...
+# Subtest: Accepted event wrong fee rejected
+ok 31 - Accepted event wrong fee rejected
+  ---
+  duration_ms: 3.488791
+  ...
+# Subtest: Accepted event wrong payee rejected
+ok 32 - Accepted event wrong payee rejected
+  ---
+  duration_ms: 5.101625
+  ...
+# Subtest: missing or sample placeholder configuration fails closed
+ok 33 - missing or sample placeholder configuration fails closed
+  ---
+  duration_ms: 1.070833
+  ...
+# Subtest: single attempt guard exclusively records once and cannot be overwritten
+ok 34 - single attempt guard exclusively records once and cannot be overwritten
+  ---
+  duration_ms: 60.5125
+  ...
+# Subtest: A fixture uses no quota/key/guard and preserves existing guard
+ok 35 - A fixture uses no quota/key/guard and preserves existing guard
+  ---
+  duration_ms: 36.746209
+  ...
+# Subtest: real A existing attempt guard blocks before reading quota
+ok 36 - real A existing attempt guard blocks before reading quota
+  ---
+  duration_ms: 1.202917
+  ...
+# Subtest: only owner-only key file accepted, parser never executes shell
+ok 37 - only owner-only key file accepted, parser never executes shell
+  ---
+  duration_ms: 2.053625
+  ...
+# Subtest: persisted decimal strings roundtrip without concatenation
+ok 38 - persisted decimal strings roundtrip without concatenation
+  ---
+  duration_ms: 2.322625
+  ...
+# Subtest: cap rejects actual overspend including unknown reserved gas
+ok 39 - cap rejects actual overspend including unknown reserved gas
+  ---
+  duration_ms: 0.097584
+  ...
+# Subtest: wrong/unsafe types fail closed
+ok 40 - wrong/unsafe types fail closed
+  ---
+  duration_ms: 0.180958
+  ...
+# Subtest: two independent worker processes and DB directories complete fixture jobs
+ok 41 - two independent worker processes and DB directories complete fixture jobs
+  ---
+  duration_ms: 508.688583
+  ...
+# Subtest: exact fixed native-MON EIP712 quote signing rejects changed payload and domain
+ok 42 - exact fixed native-MON EIP712 quote signing rejects changed payload and domain
+  ---
+  duration_ms: 10.356875
+  ...
+# Subtest: zero actual HTTP before Verified, then one response persisted and retries no call
+ok 43 - zero actual HTTP before Verified, then one response persisted and retries no call
+  ---
+  duration_ms: 122.618958
+  ...
+# Subtest: hash mismatch never dispatch
+ok 44 - hash mismatch never dispatch
+  ---
+  duration_ms: 107.500958
+  ...
+# Subtest: proposal blockId mismatch never dispatch
+ok 45 - proposal blockId mismatch never dispatch
+  ---
+  duration_ms: 95.545667
+  ...
+# Subtest: wrong number never dispatch
+ok 46 - wrong number never dispatch
+  ---
+  duration_ms: 99.389042
+  ...
+# Subtest: Finalized alone cannot lower frozen Verified gate
+ok 47 - Finalized alone cannot lower frozen Verified gate
+  ---
+  duration_ms: 97.476042
+  ...
+# Subtest: wrong Accepted entitlement never dispatch
+ok 48 - wrong Accepted entitlement never dispatch
+  ---
+  duration_ms: 23.984958
+  ...
+# Subtest: reverted receipt never dispatch
+ok 49 - reverted receipt never dispatch
+  ---
+  duration_ms: 3.535125
+  ...
+# Subtest: late Verified never dispatch
+ok 50 - late Verified never dispatch
+  ---
+  duration_ms: 24.788667
+  ...
+# Subtest: provider timeout persisted Unknown survives process restart and never redispatch
+ok 51 - provider timeout persisted Unknown survives process restart and never redispatch
+  ---
+  duration_ms: 48.016917
+  ...
+# Subtest: crash after durable intent becomes Unknown; no HTTP
+ok 52 - crash after durable intent becomes Unknown; no HTTP
+  ---
+  duration_ms: 23.928958
+  ...
+# Subtest: crash before intent remains paid undispatched
+ok 53 - crash before intent remains paid undispatched
+  ---
+  duration_ms: 12.846542
+  ...
+# Subtest: duplicate concurrency cannot send twice
+ok 54 - duplicate concurrency cannot send twice
+  ---
+  duration_ms: 45.388792
+  ...
+# Subtest: unknown does not change on-chain accepted fee claimability (injected chain fixture)
+ok 55 - unknown does not change on-chain accepted fee claimability (injected chain fixture)
+  ---
+  duration_ms: 43.986959
+  ...
+# Subtest: A/B storage independent
+ok 56 - A/B storage independent
+  ---
+  duration_ms: 43.921
+  ...
+# Subtest: hanging provider times out Unknown with one attempt and no retry
+ok 57 - hanging provider times out Unknown with one attempt and no retry
+  ---
+  duration_ms: 70.6695
+  ...
+# Subtest: response without actual usage cannot mark Completed
+ok 58 - response without actual usage cannot mark Completed
+  ---
+  duration_ms: 46.184291
+  ...
+# Subtest: canonical grant identity rejects second HTTP through changed job.id
+ok 59 - canonical grant identity rejects second HTTP through changed job.id
+  ---
+  duration_ms: 46.405417
+  ...
+# Subtest: canonical grant Unknown survives changed alias and reopen
+ok 60 - canonical grant Unknown survives changed alias and reopen
+  ---
+  duration_ms: 49.693125
+  ...
+# Subtest: changed prompt cannot use original signed quote
+ok 61 - changed prompt cannot use original signed quote
+  ---
+  duration_ms: 0.782667
+  ...
+# Subtest: changed model cannot use original signed quote
+ok 62 - changed model cannot use original signed quote
+  ---
+  duration_ms: 0.732292
+  ...
+# Subtest: caller-reported input hash cannot bypass actual canonical bytes
+ok 63 - caller-reported input hash cannot bypass actual canonical bytes
+  ---
+  duration_ms: 0.504208
+  ...
+# Subtest: receipt.to wrong contract cannot dispatch
+ok 64 - receipt.to wrong contract cannot dispatch
+  ---
+  duration_ms: 0.402083
+  ...
+# Subtest: wrong onchain quoteHash cannot dispatch
+ok 65 - wrong onchain quoteHash cannot dispatch
+  ---
+  duration_ms: 23.292875
+  ...
+# Subtest: wrong onchain policyHash cannot dispatch
+ok 66 - wrong onchain policyHash cannot dispatch
+  ---
+  duration_ms: 22.972125
+  ...
+# Subtest: changed signed quote fee cannot dispatch
+ok 67 - changed signed quote fee cannot dispatch
+  ---
+  duration_ms: 2.896916
+  ...
+# Subtest: provider receives frozen canonical input independent of caller mutation
+ok 68 - provider receives frozen canonical input independent of caller mutation
+  ---
+  duration_ms: 42.959209
+  ...
+# Subtest: Accepted fee already claimed retains valid immutable paid entitlement
+ok 69 - Accepted fee already claimed retains valid immutable paid entitlement
+  ---
+  duration_ms: 43.95075
+  ...
+# Subtest: wrong total paid entitlement still rejects
+ok 70 - wrong total paid entitlement still rejects
+  ---
+  duration_ms: 22.9995
+  ...
+# Subtest: legacy alias-keyed prior record cannot redispatch on repaired canonical identity
+ok 71 - legacy alias-keyed prior record cannot redispatch on repaired canonical identity
+  ---
+  duration_ms: 29.86925
+  ...
+# Subtest: conflicting samehash proposal blockId invalidates cached Verified proof
+ok 72 - conflicting samehash proposal blockId invalidates cached Verified proof
+  ---
+  duration_ms: 93.522417
+  ...
+# Subtest: failed provider before split: only root is registered; future child IDs never probed
+ok 73 - failed provider before split: only root is registered; future child IDs never probed
+  ---
+  duration_ms: 1.098042
+  ...
+# Subtest: actual two created leaves included
+ok 74 - actual two created leaves included
+  ---
+  duration_ms: 0.114625
+  ...
+# Subtest: uncreated depth0 child is a known bad topology and rejected
+ok 75 - uncreated depth0 child is a known bad topology and rejected
+  ---
+  duration_ms: 0.868292
+  ...
+# Subtest: active tree is not stable enough for cold traversal
+ok 76 - active tree is not stable enough for cold traversal
+  ---
+  duration_ms: 2.586875
+  ...
+# Subtest: count over frozen bound rejected
+ok 77 - count over frozen bound rejected
+  ---
+  duration_ms: 0.343208
+  ...
+1..77
+# tests 77
+# suites 0
+# pass 77
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1646.629834

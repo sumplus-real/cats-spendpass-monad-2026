@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {weiAmount,withinGasBudget} from './gas-budget.mjs';
+test('persisted decimal strings roundtrip without concatenation',()=>{const j=JSON.parse(JSON.stringify({spent:'79501860000000000',next:'34711518000000000',cap:'250000000000000000'}));assert.equal(weiAmount(j.spent)+weiAmount(j.next),114213378000000000n);assert.equal(withinGasBudget(j.spent,'0',j.next,j.cap),true);assert.equal(BigInt(j.spent+34711518000000000n)>BigInt(j.cap),true);});
+test('cap rejects actual overspend including unknown reserved gas',()=>{assert.equal(withinGasBudget('79501860000000000','160000000000000000','34711518000000000','250000000000000000'),false);});
+test('wrong/unsafe types fail closed',()=>{for(const bad of [79501860000000000,-1n,'-1','1.0','01',null,{},'1e9'])assert.throws(()=>weiAmount(bad));});

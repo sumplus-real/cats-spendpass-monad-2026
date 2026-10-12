@@ -1,0 +1,12 @@
+node_modules/
+contracts/out/
+contracts/cache/
+.runtime/
+*.env
+.env*
+*.key
+wallets.json
+video/render-cache/
+
+!sample.env
+materials/source-candidate*/

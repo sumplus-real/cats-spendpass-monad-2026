@@ -1,0 +1,20 @@
+{
+  "state": "LOCAL_CONTRACT_TESTS_PASS",
+  "scope": "Only local Foundry. No testnet transaction, provider call, audit, or WS acceptance proof in this report.",
+  "tests": 31,
+  "fuzz_runs": 256,
+  "knownbad": "Actual parent.free storage double credit makes machine conservation guard FAIL root ledger",
+  "compiler": "solc 0.8.28 optimizer200 viaIR Cancun",
+  "files": {
+    "contracts/src/SpendPass.sol": "237731d00edc8110b7c78647e29bf06b746b6a41498cbebf03a8a281dfe74f32",
+    "contracts/test/SpendPass.t.sol": "eef8fc060dc114b1a0b0bbec0a399c89d85d8b72d385a7017b9117957fbc4c65",
+    "foundry.toml": "1c15bf37a61391fbda4a0f241498735b8683d2346713f3c18343d211cf418b96"
+  },
+  "abi": "contracts/SpendPass.abi.json",
+  "logs": [
+    "contracts/evidence/foundry-tests.txt",
+    "contracts/evidence/knownbad-must-fail.txt"
+  ],
+  "revision": "v1.1 frozen A/B policy enforced: delegate must equal rootOperator, childOperator must differ; unsupported role configurations rejected before funds/nonce state writes.",
+  "updatedAt": "2026-10-12T18:51:03.856463+00:00"
+}

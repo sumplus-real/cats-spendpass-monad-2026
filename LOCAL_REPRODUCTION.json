@@ -1,0 +1,19 @@
+{
+  "status": "PASS_SELF_CONTAINED_SOURCE",
+  "verifiedAt": "2026-10-12T19:37:54.591786+00:00",
+  "sourceFileCount": 79,
+  "nodeTests": 77,
+  "foundryTests": 31,
+  "fuzzRuns": 256,
+  "npmKnownVulnerabilities": 0,
+  "chainTransactionsSent": 0,
+  "modelHTTPAttempts": 0,
+  "packageLockSha256": "592d9c05bef5825a8ade8359e12e278e8349923bfaa5ec1405f4c3c7a98f9b82",
+  "wsVersion": "8.21.0",
+  "manifestAllSourceFilesMatched": true,
+  "evidence": [
+    "LOCAL_REPRODUCTION_NODE_TESTS.tap",
+    "LOCAL_REPRODUCTION_FOUNDRY_TESTS.txt",
+    "LOCAL_REPRODUCTION_NPM_AUDIT.json"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "pass": true,
+  "scope": "Actual local HTTP fixture counter; fabricated WS Verified headers and mocked chain adapter reads. No real testnet or model call.",
+  "httpCallsTotal": 3,
+  "results": [
+    {
+      "case": "same Accepted receipt/grant with changed job.id",
+      "state": "Completed",
+      "httpCalls": 1,
+      "pass": true
+    },
+    {
+      "case": "concurrent aliases share durable lock",
+      "httpCalls": 1,
+      "pass": true
+    },
+    {
+      "case": "changed_prompt",
+      "httpCalls": 0,
+      "pass": true
+    },
+    {
+      "case": "changed_model",
+      "httpCalls": 0,
+      "pass": true
+    },
+    {
+      "case": "wrong_claimed_to",
+      "state": "Rejected",
+      "httpCalls": 0,
+      "pass": true
+    },
+    {
+      "case": "wrong_actual_to",
+      "state": "AcceptedPaidUndispatched",
+      "reason": "actual receipt.to is not pinned contract",
+      "httpCalls": 0,
+      "pass": true
+    },
+    {
+      "case": "missing_accepted_log",
+      "state": "AcceptedPaidUndispatched",
+      "reason": "receipt lacks matching contract Accepted event",
+      "httpCalls": 0,
+      "pass": true
+    },
+    {
+      "case": "quote_hash_mismatch",
+      "state": "AcceptedPaidUndispatched",
+      "reason": "Accepted state/payee entitlement mismatch",
+      "httpCalls": 0,
+      "pass": true
+    },
+    {
+      "case": "excess_entitlement",
+      "state": "AcceptedPaidUndispatched",
+      "reason": "Accepted state/payee entitlement mismatch",
+      "httpCalls": 0,
+      "pass": true
+    },
+    {
+      "case": "conflicting_verified_proposal",
+      "state": "AcceptedPaidUndispatched",
+      "reason": "WS Verified timeout; no dispatch",
+      "httpCalls": 0,
+      "pass": true
+    },
+    {
+      "case": "acceptance fee already claimed to fixed payee",
+      "state": "Completed",
+      "httpCalls": 1,
+      "pass": true
+    }
+  ],
+  "sourceHashes": {
+    "runtime/worker.mjs": "3f814fed016e55d4b97f91a4325520b6600652e20c1b1c01ae071a956d1db4a8",
+    "runtime/chain.mjs": "8b4a9ffb23794b47c2b9e9a9ba3c3ae751fbac1e472abff7f32e8675c81b0866",
+    "runtime/binding.mjs": "0cc6042f583c449bfb6df7eb72834cffcb72ef572683a68553cd136703c24a11",
+    "runtime/quote.mjs": "48c59ded1e6e94098703a85fd73c44d3a6d25f2881abaa85e1d7ea873668672c"
+  }
+}

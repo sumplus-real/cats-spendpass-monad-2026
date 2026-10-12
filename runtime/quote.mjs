@@ -1,0 +1,6 @@
+import { hashTypedData, verifyTypedData } from 'viem';
+export const QUOTE_TYPES={Quote:[{name:'grantId',type:'bytes32'},{name:'operator',type:'address'},{name:'payee',type:'address'},{name:'taskInputHash',type:'bytes32'},{name:'modelHash',type:'bytes32'},{name:'fee',type:'uint256'},{name:'expiry',type:'uint256'},{name:'nonce',type:'uint256'},{name:'policyHash',type:'bytes32'},{name:'assetNativeMON',type:'address'}]};
+export function quoteTypedData(contractAddress,quote,{name='CATS SpendPass',version='1'}={}){return {domain:{name,version,chainId:10143,verifyingContract:contractAddress},types:QUOTE_TYPES,primaryType:'Quote',message:{...quote,assetNativeMON:'0x0000000000000000000000000000000000000000'}};}
+export async function signQuote(account,contractAddress,quote,options){if(account.address.toLowerCase()!==quote.operator.toLowerCase())throw new Error('quote signer is not operator');return account.signTypedData(quoteTypedData(contractAddress,quote,options));}
+export async function verifyQuote(contractAddress,quote,signature,options){return verifyTypedData({...quoteTypedData(contractAddress,quote,options),address:quote.operator,signature});}
+export function quoteDigest(contractAddress,quote,options){return hashTypedData(quoteTypedData(contractAddress,quote,options));}

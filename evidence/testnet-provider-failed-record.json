@@ -1,0 +1,72 @@
+{
+  "id": "10143-0xa6995fad6255accf1bf0c570ac9c48c95fb2a3a7-0xd9b796911f63fee79ba6150649fed657131f9395f5a74a03ca5dba845bf4f002",
+  "displayJobId": "operatorA-0xd9b796911f63fee79ba6150649fed657131f9395f5a74a03ca5dba845bf4f002",
+  "contractAddress": "0xa6995fad6255accf1bf0c570ac9c48c95fb2a3a7",
+  "chainId": 10143,
+  "quoteHash": "0xf664a05c6ca473d4b2cf59d82b833a93ccaafbf6f5b5fec90cf9a0234dea83d6",
+  "taskInputHash": "0xe87d526e707ecaacc5ea14eeb72aebaa4b8a239ec7b90968a580e501e743d63a",
+  "modelHash": "0x42f6f0c52085beb76a36f92d8cf5a953b259f1c880de58da34c378550e0892cc",
+  "grantId": "0xd9b796911f63fee79ba6150649fed657131f9395f5a74a03ca5dba845bf4f002",
+  "receipt": {
+    "type": "eip1559",
+    "status": "success",
+    "cumulativeGasUsed": "782896",
+    "logs": [
+      {
+        "address": "0xa6995fad6255accf1bf0c570ac9c48c95fb2a3a7",
+        "topics": [
+          "0xbbefb210c6a92bfed2655fd4a50c1f963b5e1d87558782039f967c055e8cf6fd",
+          "0xd9b796911f63fee79ba6150649fed657131f9395f5a74a03ca5dba845bf4f002",
+          "0x0000000000000000000000009066d42fc452f77423d3ed499f0c3d375047ac27"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000071afd498d0000",
+        "blockHash": "0x405d49702c7bb6c5c3a5a5f3a598f4da29b668ed3b1c466bf5b27f1be5139101",
+        "blockNumber": "70474400",
+        "blockTimestamp": "0x6acd2d1c",
+        "transactionHash": "0x57b25de0378ddd2bba6ab55801d5561ef55ae1c1a9164415cb6bdd9ce3d5ecaf",
+        "transactionIndex": 2,
+        "logIndex": 4,
+        "removed": false
+      }
+    ],
+    "logsBloom": "0x00000800000000000008000000000000000000000000000000000000000000000000200000000000000000000100000000000000000000000000008000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000000000080000000000000000000000000000000000010000000800000000000000000000000000000000000400000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "transactionHash": "0x57b25de0378ddd2bba6ab55801d5561ef55ae1c1a9164415cb6bdd9ce3d5ecaf",
+    "transactionIndex": 2,
+    "blockHash": "0x405d49702c7bb6c5c3a5a5f3a598f4da29b668ed3b1c466bf5b27f1be5139101",
+    "blockNumber": "70474400",
+    "gasUsed": "64792",
+    "effectiveGasPrice": "102000000000",
+    "from": "0x9066d42fc452f77423d3ed499f0c3d375047ac27",
+    "to": "0xa6995fad6255accf1bf0c570ac9c48c95fb2a3a7",
+    "contractAddress": null,
+    "sentAt": 1791831314975
+  },
+  "state": "Failed",
+  "fee": "2000000000000000",
+  "operator": "0x9066D42Fc452F77423D3Ed499f0c3d375047Ac27",
+  "payee": "0x9066D42Fc452F77423D3Ed499f0c3d375047Ac27",
+  "acceptSentAt": 1791831314975,
+  "createdAt": 1791831319141,
+  "events": [
+    {
+      "state": "VerifiedAcceptedEntitlement",
+      "at": 1791831322954
+    },
+    {
+      "state": "DispatchIntent",
+      "at": 1791831322954
+    },
+    {
+      "state": "InFlight",
+      "at": 1791831322967
+    }
+  ],
+  "verified": {
+    "blockId": "0x1f4ac4f34a49e4a7133ce41d9ea81378be0ded6e09540db9185a93fcc2872b00",
+    "hash": "0x405d49702c7bb6c5c3a5a5f3a598f4da29b668ed3b1c466bf5b27f1be5139101",
+    "number": "0x4335aa0",
+    "receivedAt": 1791831318839
+  },
+  "reason": "provider HTTP 401",
+  "updatedAt": 1791831323758
+}
