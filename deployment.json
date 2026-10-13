@@ -1,0 +1,14 @@
+{
+  "syntheticModel": true,
+  "environment": "monad-testnet",
+  "chainId": 10143,
+  "rpc": "https://testnet-rpc.monad.xyz",
+  "contract": "0xa6995fad6255accf1bf0c570ac9c48c95fb2a3a7",
+  "codeHash": "0x9691bbb26f8e1bd0b1389644b0d30899e86955e84e2f34344b9b8cb6f8953a22",
+  "owner": "0x04CD7B75e5147F30346355AB8463f3074AAB5ECC",
+  "rootId": "0x1b043fe8c7ba02aaa6d01606a43899c73eebcc49b93b54b18ab732c0075226f6",
+  "readOnly": true,
+  "testWalletBridge": false,
+  "recoveryUrl": "recovery.html",
+  "workerEvidence": "worker-status.json"
+}

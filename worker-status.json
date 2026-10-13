@@ -1,0 +1,31 @@
+{
+  "tasks": [
+    {
+      "label": "Operator A (fixture)",
+      "state": "PaidUndispatched",
+      "fixture": true,
+      "note": "Acceptance fee paid; old timing gate failed; no model dispatched. Synthetic plan drove the later split."
+    },
+    {
+      "label": "Operator B child 1 (fixture)",
+      "state": "Completed",
+      "fixture": true,
+      "responsePersisted": true,
+      "result": {
+        "model": "fixture",
+        "fixture": true,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0
+        },
+        "note": "Synthetic output; zero real-model HTTP calls."
+      }
+    },
+    {
+      "label": "Operator B child 2 (fixture)",
+      "state": "Released",
+      "fixture": true,
+      "note": "Unaccepted offer released; 0.004 test MON withdrawn by owner."
+    }
+  ]
+}
